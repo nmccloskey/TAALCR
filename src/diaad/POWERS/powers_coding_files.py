@@ -468,7 +468,7 @@ def reselect_powers_reliability(input_dir, output_dir, frac, exclude_participant
                 new_rel_df = run_automation(new_rel_df, "3")
 
             try:
-                new_rel_filename = cod.name.replace("powers_coding", "powers_reselected_reliability_coding")
+                new_rel_filename = cod.name.replace("powers_coding", "reselected_powers_reliability_coding")
                 new_rel_filepath = powers_reselected_reliability_dir / new_rel_filename
                 new_rel_df.to_excel(new_rel_filepath, index=False)
                 logger.info(f"Successfully wrote reselected POWERS reliability coding file: {_rel(new_rel_filepath)}")
