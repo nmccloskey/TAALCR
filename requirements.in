@@ -6,6 +6,6 @@ scipy>=1.16.2
 spacy>=3.8.7
 streamlit>=1.45.1
 tqdm>=4.67.1
-rascal_speech>=0.2.0
+rascal_speech>=1.0.6
 spacy[transformers]>=3.8
 https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.8.0/en_core_web_trf-3.8.0-py3-none-any.whl
