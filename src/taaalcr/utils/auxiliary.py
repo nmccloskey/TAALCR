@@ -41,8 +41,8 @@ def parse_stratify_fields(values: list[str] | None) -> list[str]:
 # Unified parser builder
 # ---------------------------------------------------------------------
 def build_arg_parser() -> argparse.ArgumentParser:
-    """Construct the DIAAD argument parser (shared by CLI and direct run)."""
-    parser = argparse.ArgumentParser(description="DIAAD CLI.")
+    """Construct the TAAALCR argument parser (shared by CLI and direct run)."""
+    parser = argparse.ArgumentParser(description="TAAALCR CLI.")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     # --- turns ---

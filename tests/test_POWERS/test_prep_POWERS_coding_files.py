@@ -1,10 +1,9 @@
-# tests/test_POWERS/test_prep_POWERS_coding_files.py
 import pandas as pd
 import numpy as np
 import pytest
 from pathlib import Path
 
-from diaad.POWERS import POWERS_coding_files as pcf
+from taaalcr.powers import powers_coding_files as pcf
 
 
 # -------------------- Tiny fakes & stubs --------------------

@@ -1,7 +1,7 @@
 import pandas as pd
 from pathlib import Path
 from datetime import datetime
-from diaad.utils.auxiliary import read_df
+from taaalcr.utils.auxiliary import read_df
 from rascal.utils.logger import logger, _rel
 from rascal.utils.auxiliary import find_files, extract_transcript_data
 

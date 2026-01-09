@@ -2,7 +2,7 @@
 import pandas as pd
 import pytest
 from pathlib import Path
-from diaad.POWERS import automation_validation as va
+from taaalcr.POWERS import automation_validation as va
 
 
 def _mk_utt_df(site, test, ids, files=None):

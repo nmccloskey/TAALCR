@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 from pathlib import Path
 from datetime import datetime
-from diaad.utils.auxiliary import parse_stratify_fields, build_arg_parser
-from diaad.run_wrappers import (
+from taaalcr.utils.auxiliary import parse_stratify_fields, build_arg_parser
+from taaalcr.run_wrappers import (
     run_analyze_digital_convo_turns,
     run_make_powers_coding_files,
     run_analyze_powers_coding,
     run_evaluate_powers_reliability,
     run_reselect_powers_reliability_coding
 )
-from diaad.powers.automation_validation import select_validation_samples, validate_automation
+from taaalcr.powers.automation_validation import select_validation_samples, validate_automation
 from rascal.utils.auxiliary import load_config, project_path, find_files
 from rascal.run_wrappers import run_read_tiers, run_read_cha_files, run_make_transcript_tables
 from rascal.utils.logger import (
@@ -22,7 +22,7 @@ from rascal.utils.logger import (
 
 
 def main(args):
-    """Process input arguments and execute appropriate DIAAD operations."""
+    """Process input arguments and execute appropriate TAAALCR operations."""
     try:
         start_time = datetime.now()
         set_root(Path.cwd())
@@ -33,19 +33,19 @@ def main(args):
         config_path = project_path(args.config or "config.yaml")
         config = load_config(config_path)
     
-        input_dir = project_path(config.get("input_dir", "diaad_data/input"))
+        input_dir = project_path(config.get("input_dir", "taaalcr_data/input"))
         if not input_dir.is_relative_to(get_root()):
             logger.warning(f"Input directory {input_dir} is outside the project root.")
-        output_dir = project_path(config.get("output_dir", "diaad_data/output"))
+        output_dir = project_path(config.get("output_dir", "taaalcr_data/output"))
 
         timestamp = start_time.strftime("%y%m%d_%H%M")
-        out_dir = (output_dir / f"diaad_output_{timestamp}").resolve()
+        out_dir = (output_dir / f"taaalcr_output_{timestamp}").resolve()
         out_dir.mkdir(parents=True, exist_ok=True)
 
         # -----------------------------------------------------------------
         # Initialize logger once output folder is ready
         # -----------------------------------------------------------------
-        initialize_logger(start_time, out_dir, "DIAAD")
+        initialize_logger(start_time, out_dir, "TAAALCR")
         logger.info("Logger initialized and early logs flushed.")
 
         frac = config.get('reliability_fraction', 0.2)
@@ -111,12 +111,12 @@ def main(args):
             logger.error(f"Unknown command: {args.command}")
 
     except Exception as e:
-        logger.error(f"DIAAD execution failed: {e}", exc_info=True)
+        logger.error(f"TAAALCR execution failed: {e}", exc_info=True)
         raise
     
     finally:
         # Always finalize logging and metadata
-        terminate_logger(input_dir, out_dir, config_path, config, start_time, "DIAAD")
+        terminate_logger(input_dir, out_dir, config_path, config, start_time, "TAAALCR")
 
 # -------------------------------------------------------------
 # Direct execution

@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "diaad"
+name = "taaalcr"
 version = "0.2.0"
-description = " Digital Interface for Aggregate Analysis of Dialog"
+description = "Toolkit for Aggregate Analysis and Alignment of Language in Conversation, for Research"
 readme = "README.md"
 requires-python = ">=3.12"
 license = { text = "MIT" }
@@ -30,7 +30,7 @@ dependencies = [
 ]
 
 [project.scripts]
-diaad = "diaad.cli:main"
+taaalcr = "taaalcr.cli:main"
 
 [project.optional-dependencies]
 dev = ["pytest"]

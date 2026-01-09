@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-DIAAD Command-Line Interface
+TAAALCR Command-Line Interface
 ----------------------------
-Entry point for the Digital Interface for Aphasiological Analysis of Discourse (DIAAD).
+Entry point for the Toolkit for Aggregate Analysis and Alignment of Language in Conversation, for Research (TAAALCR).
 Delegates parser construction to main.build_arg_parser().
 """
 
 from .main import main as main_core
-from diaad.utils.auxiliary import build_arg_parser
+from taaalcr.utils.auxiliary import build_arg_parser
 
 
 def main():
