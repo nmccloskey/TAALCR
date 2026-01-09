@@ -32,7 +32,7 @@ from taaalcr.run_wrappers import (
     run_reselect_powers_reliability_coding,
     run_evaluate_powers_reliability,
 )
-from rascal.run_wrappers import run_read_tiers, run_read_cha_files, run_prepare_utterance_dfs
+from rascal.run_wrappers import run_read_tiers, run_read_cha_files, run_make_transcript_tables
 
 
 # --- Streamlit UI ---
@@ -111,7 +111,7 @@ if config and uploaded_files:
 
             elif "Make POWERS" in choice:
                 chats = run_read_cha_files(input_dir)
-                run_prepare_utterance_dfs(tiers, chats, output_dir)
+                run_make_transcript_tables(tiers, chats, output_dir)
                 run_make_powers_coding_files(
                     tiers, frac, coders, input_dir, output_dir, exclude_participants, automate_powers
                 )
