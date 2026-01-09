@@ -28,7 +28,7 @@ from taaalcr.main import (
     run_make_powers_coding_files,
     run_analyze_digital_convo_turns,
 )
-from taaalcr.powers.automation_validation import (
+from taaalcr.run_wrappers import (
     run_reselect_powers_reliability_coding,
     run_evaluate_powers_reliability,
 )
