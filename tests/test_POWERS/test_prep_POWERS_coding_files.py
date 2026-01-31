@@ -3,7 +3,7 @@ import numpy as np
 import pytest
 from pathlib import Path
 
-from taaalcr.powers import powers_coding_files as pcf
+from taalcr.powers import powers_coding_files as pcf
 
 
 # -------------------- Tiny fakes & stubs --------------------

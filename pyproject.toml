@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "taaalcr"
+name = "taalcr"
 version = "0.2.0"
-description = "Toolkit for Aggregate Analysis and Alignment of Language in Conversation, for Research"
+description = "Toolkit for Aggregate Analysis of Language in Conversation, for Research"
 readme = "README.md"
 requires-python = ">=3.12"
 license = { text = "MIT" }
@@ -30,7 +30,7 @@ dependencies = [
 ]
 
 [project.scripts]
-taaalcr = "taaalcr.cli:main"
+taalcr = "taalcr.cli:main"
 
 [project.optional-dependencies]
 dev = ["pytest"]

@@ -5,7 +5,7 @@ import numpy as np
 import pytest
 from pathlib import Path
 
-from taaalcr.powers import powers_coding_analysis as apc
+from taalcr.powers import powers_coding_analysis as apc
 
 
 # -------------------- Fixtures --------------------

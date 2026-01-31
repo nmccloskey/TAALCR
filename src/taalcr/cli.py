@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-TAAALCR Command-Line Interface
+TAALCR Command-Line Interface
 ----------------------------
-Entry point for the Toolkit for Aggregate Analysis and Alignment of Language in Conversation, for Research (TAAALCR).
+Entry point for the Toolkit for Aggregate Analysis of Language in Conversation, for Research (TAALCR).
 Delegates parser construction to main.build_arg_parser().
 """
 

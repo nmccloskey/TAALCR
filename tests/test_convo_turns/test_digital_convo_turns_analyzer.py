@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from taaalcr.convo_turns import digital_convo_turns_analysis as dct
+from taalcr.convo_turns import digital_convo_turns_analysis as dct
 
 
 # ---------- Fixtures ----------

@@ -1,5 +1,5 @@
-input_dir: taaalcr_data/input
-output_dir: taaalcr_data/output
+input_dir: taalcr_data/input
+output_dir: taalcr_data/output
 reliability_fraction: 0.2
 automate_powers: true
 just_c2_powers: false

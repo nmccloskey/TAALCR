@@ -22,7 +22,7 @@ from rascal.utils.logger import (
 
 
 def main(args):
-    """Process input arguments and execute appropriate TAAALCR operations."""
+    """Process input arguments and execute appropriate TAALCR operations."""
     try:
         start_time = datetime.now()
         set_root(Path.cwd())
@@ -33,19 +33,19 @@ def main(args):
         config_path = project_path(args.config or "config.yaml")
         config = load_config(config_path)
     
-        input_dir = project_path(config.get("input_dir", "taaalcr_data/input"))
+        input_dir = project_path(config.get("input_dir", "taalcr_data/input"))
         if not input_dir.is_relative_to(get_root()):
             logger.warning(f"Input directory {input_dir} is outside the project root.")
-        output_dir = project_path(config.get("output_dir", "taaalcr_data/output"))
+        output_dir = project_path(config.get("output_dir", "taalcr_data/output"))
 
         timestamp = start_time.strftime("%y%m%d_%H%M")
-        out_dir = (output_dir / f"taaalcr_output_{timestamp}").resolve()
+        out_dir = (output_dir / f"taalcr_output_{timestamp}").resolve()
         out_dir.mkdir(parents=True, exist_ok=True)
 
         # -----------------------------------------------------------------
         # Initialize logger once output folder is ready
         # -----------------------------------------------------------------
-        initialize_logger(start_time, out_dir, "TAAALCR")
+        initialize_logger(start_time, out_dir, "TAALCR")
         logger.info("Logger initialized and early logs flushed.")
 
         frac = config.get('reliability_fraction', 0.2)
@@ -111,12 +111,12 @@ def main(args):
             logger.error(f"Unknown command: {args.command}")
 
     except Exception as e:
-        logger.error(f"TAAALCR execution failed: {e}", exc_info=True)
+        logger.error(f"TAALCR execution failed: {e}", exc_info=True)
         raise
     
     finally:
         # Always finalize logging and metadata
-        terminate_logger(input_dir, out_dir, config_path, config, start_time, "TAAALCR")
+        terminate_logger(input_dir, out_dir, config_path, config, start_time, "TAALCR")
 
 # -------------------------------------------------------------
 # Direct execution

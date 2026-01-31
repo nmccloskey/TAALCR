@@ -11,11 +11,11 @@ env*/
 dist/
 build/
 *.egg-info/
-src/taaalcr.egg-info/
+src/taalcr.egg-info/
 
-# TAAALCR-specific
-taaalcr_data/output/
-taaalcr_data/input/
+# taalcr-specific
+taalcr_data/output/
+taalcr_data/input/
 
 # System files
 .DS_Store

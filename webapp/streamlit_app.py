@@ -1,7 +1,7 @@
 """
-TAAALCR Streamlit App
+TAALCR Streamlit App
 -------------------
-Web interface for the Toolkit for Aggregate Analysis and Alignment of Language in Conversation, for Research (TAAALCR).
+Web interface for the Toolkit for Aggregate Analysis of Language in Conversation, for Research (TAALCR).
 Allows users to upload configuration and conversation data, select analysis modules,
 and download structured outputs.
 """
@@ -22,13 +22,13 @@ def add_src_to_sys_path():
 
 add_src_to_sys_path()
 
-# --- TAAALCR & RASCAL imports ---
-from taaalcr.main import (
+# --- TAALCR & RASCAL imports ---
+from taalcr.main import (
     run_analyze_powers_coding,
     run_make_powers_coding_files,
     run_analyze_digital_convo_turns,
 )
-from taaalcr.run_wrappers import (
+from taalcr.run_wrappers import (
     run_reselect_powers_reliability_coding,
     run_evaluate_powers_reliability,
 )
@@ -36,8 +36,8 @@ from rascal.run_wrappers import run_read_tiers, run_read_cha_files, run_make_tra
 
 
 # --- Streamlit UI ---
-st.title("TAAALCR Web App")
-st.subheader("Toolkit for Aggregate Analysis and Alignment of Language in Conversation, for Research")
+st.title("TAALCR Web App")
+st.subheader("Toolkit for Aggregate Analysis of Language in Conversation, for Research")
 
 if "confirmed_config" not in st.session_state:
     st.session_state.confirmed_config = False
@@ -103,7 +103,7 @@ if config and uploaded_files:
 
         if st.button("🚀 Run Analysis"):
             timestamp = datetime.now().strftime("%y%m%d_%H%M")
-            out_dir = output_dir / f"taaalcr_output_{timestamp}"
+            out_dir = output_dir / f"taalcr_output_{timestamp}"
             out_dir.mkdir(parents=True, exist_ok=True)
 
             if "Turns" in choice:

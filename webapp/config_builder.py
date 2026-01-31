@@ -14,7 +14,7 @@ def _split_values(text: str):
     return [p.strip() for p in parts if p.strip()]
 
 def build_config_ui():
-    st.subheader("🔧 Create TAAALCR Config")
+    st.subheader("🔧 Create TAALCR Config")
 
     # ---- Top-level defaults for public release ----
     input_dir = st.text_input("Input directory", value="data/input")
