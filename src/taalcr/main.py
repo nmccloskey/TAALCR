@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 from pathlib import Path
 from datetime import datetime
-from taaalcr.utils.auxiliary import parse_stratify_fields, build_arg_parser
-from taaalcr.run_wrappers import (
+from taalcr.utils.auxiliary import parse_stratify_fields, build_arg_parser
+from taalcr.run_wrappers import (
     run_analyze_digital_convo_turns,
     run_make_powers_coding_files,
     run_analyze_powers_coding,
     run_evaluate_powers_reliability,
     run_reselect_powers_reliability_coding
 )
-from taaalcr.powers.automation_validation import select_validation_samples, validate_automation
+from taalcr.powers.automation_validation import select_validation_samples, validate_automation
 from rascal.utils.auxiliary import load_config, project_path, find_files
 from rascal.run_wrappers import run_read_tiers, run_read_cha_files, run_make_transcript_tables
 from rascal.utils.logger import (

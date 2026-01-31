@@ -7,7 +7,7 @@ Delegates parser construction to main.build_arg_parser().
 """
 
 from .main import main as main_core
-from taaalcr.utils.auxiliary import build_arg_parser
+from taalcr.utils.auxiliary import build_arg_parser
 
 
 def main():
