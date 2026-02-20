@@ -26,6 +26,10 @@ COMM_cols = [
     "communication", "topic", "subject", "dialogue", "conversation"
 ]
 
+TT_DROP_COLS = [
+    "file", "input_order", "shuffled_order", "position", "position_sub"
+]
+
 CONTENT_UPOS = {"NOUN", "PROPN", "VERB", "ADJ", "ADV", "NUM"}
 
 GENERIC_TERMS = {"stuff", "thing", "things", "something", "anything", "everything", "nothing"}
@@ -316,7 +320,8 @@ def make_powers_coding_files(tiers, frac, coders, input_dir, output_dir, exclude
         shuffled_utt_df = pd.concat(subdfs, ignore_index=True)
 
         pc_df = shuffled_utt_df.drop(columns=[
-            col for col in ['file'] + [t for t in tiers if t.lower() not in COMM_cols] if col in shuffled_utt_df.columns
+            col for col in TT_DROP_COLS + \
+                [t for t in tiers if t.lower() not in COMM_cols] if col in shuffled_utt_df.columns
             ]).copy()
         
         pc_df["c1_id"] = pd.Series(dtype="object")

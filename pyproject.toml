@@ -25,7 +25,7 @@ dependencies = [
     "spacy==3.8.7",
     "streamlit>=1.45.1",
     "tqdm>=4.67.1",
-    "rascal_speech==0.2.0",
+    "rascal_speech==1.0.7",
     "spacy[transformers]>=3.8"
 ]
 
