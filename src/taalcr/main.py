@@ -54,7 +54,7 @@ def main(args):
         automate_powers = config.get('automate_powers', True)
         just_c2_powers = config.get('just_c2_powers', False)
 
-        tiers, TM = run_read_tiers(config.get('tiers', {})) or {}
+        tiers, TM = run_read_tiers(config) or {}
 
         # ---------------------------------------------------------
         # Dispatch

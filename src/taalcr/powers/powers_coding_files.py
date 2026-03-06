@@ -319,10 +319,21 @@ def make_powers_coding_files(tiers, frac, coders, input_dir, output_dir, exclude
         random.shuffle(subdfs)
         shuffled_utt_df = pd.concat(subdfs, ignore_index=True)
 
-        pc_df = shuffled_utt_df.drop(columns=[
-            col for col in TT_DROP_COLS + \
-                [t for t in tiers if t.lower() not in COMM_cols] if col in shuffled_utt_df.columns
-            ]).copy()
+        non_comm_tier_cols = [
+            tier.name for tier in tiers.values()
+            if tier.name.lower() not in COMM_cols
+        ]
+
+        drop_cols = [
+            col for col in TT_DROP_COLS + non_comm_tier_cols
+            if col in shuffled_utt_df.columns
+        ]
+
+        pc_df = shuffled_utt_df.drop(columns=drop_cols).copy()
+
+        logger.info(f"Transcript columns: {list(shuffled_utt_df.columns)}")
+        logger.info(f"Non-COMM tier cols to drop: {non_comm_tier_cols}")
+        logger.info(f"Final drop cols: {drop_cols}")
         
         pc_df["c1_id"] = pd.Series(dtype="object")
         pc_df["c2_id"] = pd.Series(dtype="object")
