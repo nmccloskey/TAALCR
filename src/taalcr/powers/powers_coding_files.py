@@ -9,7 +9,7 @@ from pathlib import Path
 
 from rascal.utils.logger import logger, _rel
 from rascal.coding.coding_files import segment, assign_coders
-from rascal.utils.auxiliary import find_files, extract_transcript_data
+from rascal.utils.auxiliary import find_files, extract_transcript_data, calc_subset_size
 from rascal.transcripts.transcription_reliability_evaluation import process_utterances
 
 
@@ -344,7 +344,9 @@ def make_powers_coding_files(tiers, frac, coders, input_dir, output_dir, exclude
             pc_df.loc[pc_df['sample_id'].isin(seg), 'c1_id'] = ass[0]
             pc_df.loc[pc_df['sample_id'].isin(seg), 'c2_id'] = ass[1]
 
-            rel_samples = random.sample(seg, k=max(1, round(len(seg) * frac)))
+            n_rel_samples = calc_subset_size(frac=frac, samples=seg)
+            rel_samples = random.sample(seg, k=n_rel_samples)
+
             relsegdf = pc_df[pc_df['sample_id'].isin(rel_samples)].copy()
 
             rel_subsets.append(relsegdf)
@@ -447,7 +449,8 @@ def reselect_powers_reliability(input_dir, output_dir, frac, exclude_participant
                 logger.warning(f"No available samples to reselect for {cod.name}. Skipping.")
                 continue
             
-            num_to_select = max(1, round(len(all_samples) * float(frac)))
+            num_to_select = calc_subset_size(frac=frac, samples=all_samples)
+
             if len(available_samples) < num_to_select:
                 logger.warning(
                     f"Not enough unused samples in {cod.name}. "
