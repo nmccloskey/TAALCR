@@ -307,7 +307,7 @@ def make_powers_coding_files(tiers, frac, coders, input_dir, output_dir, exclude
 
     for file, uttdf in tqdm(zip(transcript_tables, utt_dfs), desc="Generating POWERS coding files"):
         logger.info(f"Processing file: {_rel(file)}")
-        labels = [t.match(file.name, return_None=True) for t in tiers.values()]
+        labels = [t.match(file.name, return_none=True) for t in tiers.values()]
         labels = [l for l in labels if l is not None]
 
         assignments = assign_coders(coders)
