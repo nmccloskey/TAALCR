@@ -1,6 +1,66 @@
 # TAALCR — Toolkit for Aggregate Analysis of Language in Conversation, for Research
 
-TAALCR is a research toolkit for batched dialog analysis that includes workflows for analyzing digital conversation turns and [POWERS](https://doi.org/10.3233/ACS-2013-20107) coding. It complements (and imports) the monologic discourse analysis system [RASCAL](https://github.com/nmccloskey/RASCAL). A third functionality for characterizing clinical language elicitation is underway.
+![PyPI version](https://img.shields.io/pypi/v/taalcr)
+![Python](https://img.shields.io/pypi/pyversions/taalcr)
+![License](https://img.shields.io/github/license/nmccloskey/TAALCR)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://rascal.streamlit.app/)
+
+> Open-source Python infrastructure for reproducible conversational discourse analysis.
+
+---
+
+⚠️ **Development Notice**
+
+Active development of the semi-automated discourse analysis infrastructure now continues under the **DIAAD** project.
+
+This repository remains available for historical continuity and will later host modules for **clinical language elicitation evaluation in aphasiology**.
+
+---
+
+## Description
+
+TAALCR is a research toolkit for **batched conversational discourse analysis**.  
+It currently provides workflows for:
+
+- **Digital Conversation Turn (DCT) analysis**
+- **POWERS coding** for pragmatic discourse evaluation
+
+TAALCR complements the monologic discourse analysis system  
+**[RASCAL](https://github.com/nmccloskey/RASCAL)** and imports components from it when appropriate.
+
+A third functionality — **quantitative characterization of clinical language elicitation** — is currently in development.
+
+---
+
+## Installation
+
+TAALCR is currently developed and tested with **Python 3.12**.
+
+A dedicated virtual environment using Anaconda is recommended:
+
+### 1. Create and activate your environment:
+
+```bash
+conda create --name taalcr python=3.12
+conda activate taalcr
+```
+
+### 2. Install TAALCR:
+```bash
+# Install from PyPI
+pip install taalcr
+
+# or install the latest development version
+pip install git+https://github.com/nmccloskey/taalcr.git@main
+```
+
+### 3. Install the spaCy transformer model
+
+(required for automated POWERS coding)
+
+```bash
+python -m spacy download en_core_web_trf
+```
 
 ---
 
@@ -25,33 +85,6 @@ TAALCR is a research toolkit for batched dialog analysis that includes workflows
 You can use TAALCR in your browser — no installation required:
 
 👉 [Launch the TAALCR Web App](https://taalcr.streamlit.app/)
-
----
-
-## Installation
-
-A dedicated virtual environment using Anaconda is recommended:
-
-### 1. Create and activate your environment:
-
-```bash
-conda create --name taalcr python=3.12
-conda activate taalcr
-```
-
-### 2. Download TAALCR:
-```bash
-# directly from PyPI
-pip install taalcr
-
-# or from GitHub
-pip install git+https://github.com/nmccloskey/taalcr.git@main
-```
-
-### 3. Install the `en_core_web_trf` model (for POWERS coding automation):
-```bash
-python -m spacy download en_core_web_trf
-```
 
 ---
 
