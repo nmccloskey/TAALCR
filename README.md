@@ -3,7 +3,6 @@
 ![PyPI version](https://img.shields.io/pypi/v/taalcr)
 ![Python](https://img.shields.io/pypi/pyversions/taalcr)
 ![License](https://img.shields.io/github/license/nmccloskey/TAALCR)
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://rascal.streamlit.app/)
 
 > Open-source Python infrastructure for reproducible conversational discourse analysis.
 
